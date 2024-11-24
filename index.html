@@ -1,72 +1,257 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
-<title>CSS Template</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Bruna Ferragut</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #000000;
-}
+        /* Padrão geométrico de fundo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.1) 45%, rgba(255,255,255,0.1) 55%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(255,255,255,0.1) 45%, rgba(255,255,255,0.1) 55%, transparent 55%);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
 
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #ffffff;
-  text-align: right;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0,0,0,0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
 
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ffffff;
-  color: black;
-}
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #FFD700;
+        }
 
-/* Style the content */
-.content {
-  background-color: #808080;
-  padding: 10px;
-  height: 200px; /* Should be removed. Only for demonstration */
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
 
-/* Style the footer */
-.footer {
-  background-color:tomato;
-  padding: 10px;
-}
-</style>
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        .sobre-mim {
+            margin-top: 150px;
+            padding: 4rem 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .foto-container {
+            flex: 1;
+        }
+
+        .foto-perfil {
+            width: 100%;
+            max-width: 400px;
+            border: 10px solid #FFD700;
+            position: relative;
+        }
+
+        .foto-perfil::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid #FFD700;
+            z-index: -1;
+        }
+
+        .sobre-texto {
+            flex: 1;
+        }
+
+        .softwares {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .softwares img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .secao {
+            padding: 4rem 10%;
+        }
+
+        .secao h2 {
+            text-align: center;
+            color: #FFD700;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .projeto {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .projeto.invertido {
+            flex-direction: row-reverse;
+        }
+
+        .projeto-imagem {
+            flex: 1;
+            border: 10px solid #FFD700;
+            position: relative;
+        }
+
+        .projeto-imagem img {
+            width: 100%;
+            display: block;
+        }
+
+        .projeto-texto {
+            flex: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(0,0,0,0.8);
+        }
+
+        footer h2 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Portfolio Bruna Ferragut</h1>
+        <nav>
+            <a href="#artes-fisicas">Artes Físicas</a>
+            <a href="#artes-vetoriais">Artes Vetoriais</a>
+            <a href="#composicao">Composição de imagens</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
 
-<div class="topnav">
-  <a href="#">testee</a>
-  <a href="#">Artes</a>
-  <a href="#">Outras artes</a>
-</div>
+    <section class="sobre-mim">
+        <div class="foto-container">
+            <img src="/api/placeholder/400/500" alt="Bruna Ferragut" class="foto-perfil">
+            <div class="softwares">
+                <img src="/api/placeholder/50/50" alt="Adobe Illustrator">
+                <img src="/api/placeholder/50/50" alt="Adobe Photoshop">
+                <img src="/api/placeholder/50/50" alt="Adobe InDesign">
+                <img src="/api/placeholder/50/50" alt="Figma">
+            </div>
+        </div>
+        <div class="sobre-texto">
+            <h2>Sobre mim</h2>
+            <p>Seu texto sobre você aqui...</p>
+        </div>
+    </section>
 
-<div class="content">
-  <h2>CSS Template</h2>
-  <p> A topnav, content and a footer.</p>
-</div>
+    <section id="artes-fisicas" class="secao">
+        <h2>Artes Físicas</h2>
+        <div class="projeto">
+            <div class="projeto-imagem">
+                <img src="/api/placeholder/500/300" alt="Arte Física 1">
+            </div>
+            <div class="projeto-texto">
+                <p>Descrição da primeira arte física...</p>
+            </div>
+        </div>
+        <div class="projeto invertido">
+            <div class="projeto-imagem">
+                <img src="/api/placeholder/500/300" alt="Arte Física 2">
+            </div>
+            <div class="projeto-texto">
+                <p>Descrição da segunda arte física...</p>
+            </div>
+        </div>
+    </section>
 
-<div class="footer">
-  <p style="color:white; background-color:blue"> Teste só pra saber se vai </p>
-</div>
+    <section id="artes-vetoriais" class="secao">
+        <h2>Artes Vetoriais</h2>
+        <div class="projeto">
+            <div class="projeto-imagem">
+                <img src="/api/placeholder/500/300" alt="Arte Vetorial 1">
+            </div>
+            <div class="projeto-texto">
+                <p>Descrição da primeira arte vetorial...</p>
+            </div>
+        </div>
+        <div class="projeto invertido">
+            <div class="projeto-imagem">
+                <img src="/api/placeholder/500/300" alt="Arte Vetorial 2">
+            </div>
+            <div class="projeto-texto">
+                <p>Descrição da segunda arte vetorial...</p>
+            </div>
+        </div>
+    </section>
 
+    <section id="composicao" class="secao">
+        <h2>Composição de imagens</h2>
+        <div class="projeto">
+            <div class="projeto-imagem">
+                <img src="/api/placeholder/500/300" alt="Composição 1">
+            </div>
+            <div class="projeto-texto">
+                <p>Descrição da primeira composição...</p>
+            </div>
+        </div>
+        <div class="projeto invertido">
+            <div class="projeto-imagem">
+                <img src="/api/placeholder/500/300" alt="Composição 2">
+            </div>
+            <div class="projeto-texto">
+                <p>Descrição da segunda composição...</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <h2>Contato</h2>
+        <p>Email: seu.email@exemplo.com</p>
+        <p>Telefone: (XX) XXXX-XXXX</p>
+    </footer>
 </body>
 </html>
